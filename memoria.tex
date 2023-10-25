@@ -31,8 +31,12 @@
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 \usepackage{latexsym}  %% Logo LaTeX
 
-\title{Memoria del Proyecto}
-\author{Nombre del autor}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
+\usepackage{tikz-qtree}
+
+\title{Desarrollo de un juego Web de simulación de Technical Debt}
+\author{Javier Gabari Úriz}
 
 \renewcommand{\baselinestretch}{1.5}  %% Interlineado
 
@@ -56,27 +60,26 @@ ESCUELA DE INGENIERÍA DE FUENLABRADA
 \vspace{1cm}
 
 \LARGE
-TITULACIÓN EN MAYÚSCULAS
+INGENIERÍA EN SISTEMAS AUDIOVISUALES Y MULTIMEDIA
 
 \vspace{1cm}
 \LARGE
-\textbf{TRABAJO FIN DE GRADO/MÁSTER}
+\textbf{TRABAJO FIN DE GRADO}
 
 \vspace{2cm}
 
 \Large
-TÍTULO DEL TRABAJO EN MAYÚSCULAS
+DESARROLLO DE UN JUEGO WEB DE SIMULACIÓN DE TECHNICAL DEBT
 
 \vspace{2cm}
 
 \large
-Autor : Nombre del Alumno/a \\
-Tutor : Dr. Nombre del Profesor/a\\
-Cotutor: (si procede)
+Autor : Javier Gabari Úriz \\
+Tutor : Gregorio Robles Martínez\\
 \vspace{1cm}
 
 \large
-Curso académico 202X/202X
+Curso académico 2023/2024
 
 \end{center}
 \end{titlepage}
@@ -96,21 +99,21 @@ Curso académico 202X/202X
 \vspace{-4cm}
 \begin{center}
 \LARGE
-\textbf{Trabajo Fin de Grado/Máster}
+\textbf{Trabajo Fin de Grado}
 
 \vspace{1cm}
 \large
-Título del Trabajo con Letras Capitales para Sustantivos y Adjetivos
+Desarrollo de un Juego Web de Simulación de Technical Debt
 
 \vspace{1cm}
 \large
-\textbf{Autor :} Nombre del Alumno/a \\
-\textbf{Tutor :} Dr. Nombre del Profesor/a
+\textbf{Autor :} Javier Gabari Úriz \\
+\textbf{Tutor :} Gregorio Robles Martínez
 
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 202X, siendo calificada por el siguiente tribunal:
+La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2023, siendo calificada por el siguiente tribunal:
 
 
 \vspace{0.5cm}
@@ -132,7 +135,7 @@ y habiendo obtenido la siguiente calificación:
 
 \vspace{1cm}
 \begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 202X
+Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2023
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -350,25 +353,20 @@ Así:
 \section{Objetivo general} % título de sección (se muestra)
 \label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
 
-Aquí vendría el objetivo general en una frase:
-Mi trabajo fin de grado consiste en crear de una herramienta de análisis de los comentarios jocosos en repositorios de software libre alojados en la plataforma GitHub.
-
-Recuerda que los objetivos siempre vienen en infinitivo.
+Mi trabajo de fin de grado consiste en crear un juego Web que represente el concepto de \textit{Technical Debt} (Deuda Técnica).
 
 
 \section{Objetivos específicos}
 \label{sec:objetivos-especificos}
 
-Los objetivos específicos se pueden entender como las tareas en las que se ha desglosado el objetivo general.
-Y, sí, también vienen en infinitivo.
+Crear un juego Web de tipo gestor de recursos y relacionarlo con el concepto de \textit{Technical Debt}.
+Programar el juego en HTML, CSS y JavaScript y añadirle funcionalidades de servidor para que los usuarios puedan registrarse, guardar su progreso, etc.
 
 
 \section{Planificación temporal}
 \label{sec:planificacion-temporal}
 
-A mí me gusta que aquí pongáis una descripción de lo que os ha llevado realizar el trabajo.
-Hay gente que añade un diagrama de GANTT.
-Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6 meses) y a qué nivel de esfuerzo (p.ej., principalmente los fines de semana).
+Inicié el presente trabajo en febrero de 2023 dedicándole pocas horas de febrero a julio principalmente los fines de semana y de manera más intensiva en agosto, unas 6 horas casi todos los días.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -380,9 +378,20 @@ Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6
 \chapter{Estado del arte}
 \label{chap:estado}
 
-Descripción de las tecnologías que utilizas en tu trabajo. 
+Descripción de las tecnologías que utilizas en tu trabajo (HTML, JavaScript, CSS, peticiones HTTP, cookies, JSON, VSCode, GitHub)
 Con dos o tres párrafos por cada tecnología, vale. 
 Se supone que aquí viene todo lo que no has hecho tú.
+
+\begin{itemize}
+  \item JavaScript
+  \item HTML
+  \item CSS
+  \item peticiones HTTP
+  \item cookies
+  \item JSON
+  \item VSCode
+  \item GitHub
+\end{itemize}
 
 Puedes citar libros, como el de Bonabeau et al., sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. 
 Me encantan los procesos estigmérgicos.
@@ -420,11 +429,6 @@ Compila el fichero \texttt{memoria.tex} (\texttt{pdflatex memoria.tex}), añade 
 
 También existe la posibilidad de poner notas al pie de página, por ejemplo, una para indicarte que visite la página del GSyC\footnote{\url{http://gsyc.es}}.
 
-
-
-\section{Sección 1} 
-\label{sec:seccion1}
-
 Hemos hablado de cómo incluir figuras.
 Pero no hemos dicho nada de tablas.
 A mí me gustan las tablas.
@@ -448,7 +452,63 @@ Aquí un ejemplo de tabla, la Tabla~\ref{tab:ejemplo} (siento ser pesado, pero n
 Hay un sitio en Internet donde puedes diseñar las tablas fácilmente y luego hacer un corta y pega del resultado en tu editor.
 Puedes probarlo en \url{https://www.tablesgenerator.com/}.
 
+\section{HTML} 
+\label{sec:html}
 
+Del inglés, \textit{HyperText Markup Language}, HTML es el lenguaje de marcado por excelencia para la creación de páginas Web.
+Mediante etiquetas, define la estructura del contenido que se debe mostrar.
+Para añadir elementos externos basta con referenciarlos para que el navegador los busque y los una para la visualización, mientras que la propia página Web solo contiene texto.
+Actualmente es el estándar que siguen todos los navegadores.
+
+\section{JavaScript}
+\label{sec:javascript}
+
+JavaScript (habitualmente abreviado como JS) es el lenguaje de programación más usado en Web.
+Se complementa con HTML gestionando cómo se comporta una página web cuando ocurre un evento.
+Generalmente  se ejecuta en el navegador en el lado cliente, aunque también se puede ejecutar en otros entornos (como Node.js que introduciré en la sección ~\ref{sec:nodejs}) para actuar del lado del servidor.
+
+\section{CSS}
+\label{sec:css}
+
+\textit{Cascading Style Sheets}, o en español Hojas de Estilo en Cascada, es el lenguaje de estilos que se encarga de definir estéticamente la página web indicando cómo se debe renderizar cada elemento estructurado.
+
+\section{Node.js}
+\label{sec:nodejs}
+
+Node.js es un entorno de ejecución de JavaScript pensado para cubrir la necesidad de crear servidores altamente escalables.
+El entorno está orientado a atender eventos asíncronos. Cabe destacar, también, que se trata de un entorno de código abierto desarrollado por OpenJS Foundation.
+
+\section{JSON}
+\label{sec:json}
+
+JSON (\textit{JavaScript Object Notation}) es un formato para intercambiar datos basado en la sintaxis de objetos de JavaScript.
+Representa las estructuras de datos de una manera simple tanto para el humano como para la máquina.
+
+\section{Protocolo HTTP}
+\label{sec:protocolohttp}
+Es el encargado de realizar la comunicación entre cliente y servidor mediante mensajes de solicitud y de respuesta.
+En los mensajes gestionados por HTTP solo viaja texto, lo que hace que sean considerablemente ligeros.
+Los mensajes de solicitud (del cliente al servidor) utilizan 3 métodos dependiendo de su objetivo:
+
+\begin{itemize}
+  \item GET para solicitar recursos al servidor,
+  \item POST para enviar datos al servidor
+  \item y HEAD para solicitar información que pueda ir directamente en las cabeceras de la respuesta.
+\end{itemize}
+
+En los mensajes de respuesta (del servidor al cliente) se utilizan códigos numéricos para indicar qué ha sucedido con la solicitud y el contenido solicitado va codificado en el cuerpo del mensaje.
+
+\section{Cookies}
+\label{sec:cookies}
+Las Cookies HTTP son pequeños fragmentos de información creados por el servidor para ser almacenados en el lado del cliente de manera se le pueda "recordar" dicha información al servidor la próxima vez que se conecte el mismo usuario.
+Se guardan en forma de pares nombre-valor y se envían en las cabeceras de cada petición que hace el cliente al servidor correspondiente.
+
+\section{Visual Studio Code}
+\label{sec:vscode}
+Para escribir toda la parte de código de este trabajo he utilizado Visual Studio Code.
+Es un editor de código creado por Microsoft y de código abierto que es ligero y altamente personalizable.
+Soporta una alta cantidad de lenguajes de forma nativa y muchos otros mediante extensiones.
+También cuenta con control integrado de Git, usado en este trabajo para guardar los progresos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -459,23 +519,80 @@ Puedes probarlo en \url{https://www.tablesgenerator.com/}.
 \chapter{Diseño e implementación}
 \label{sec:diseno}
 
-Aquí viene todo lo que has hecho tú (tecnológicamente). 
-Puedes entrar hasta el detalle. 
-Es la parte más importante de la memoria, porque describe lo que has hecho tú.
-Eso sí, normalmente aconsejo no poner código, sino diagramas.
-
-
+En este capítulo se describe la arquitectura del juego y su implementación.
 
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
-Si tu proyecto es un software, siempre es bueno poner la arquitectura (que es cómo se estructura tu programa a ``vista de pájaro'').
+\begin{figure}
+  \centering
+  \tikzstyle{decision}=[diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+  \tikzstyle{pantalla}=[rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+  \tikzstyle{dato}=[ellipse, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+  \tikzstyle{arrow}=[draw, -latex']
+  \begin{tikzpicture}[node distance=3cm, auto]
+    \node (index) [pantalla] {Pantalla de Inicio};
+    \node (modo) [decision, below of=index, yshift=-1cm] {Elección de modo};
+    \node (invitado) [pantalla, below of=modo, yshift=-1cm] {Juego sin sesión iniciada};
+    \node (login) [pantalla, right of=modo, xshift=3cm] {Pantalla de inicio de sesión};
+    \node (nuevo) [dato, below left of=login] {Usuario nuevo};
+    \node (antiguo) [dato, below right of=login] {Usuario antiguo};
+    \node (juego) [pantalla, below right of=nuevo] {Juego con sesión iniciada};
+    \draw [arrow] (index) -- (modo);
+    \draw [arrow] (modo) -- node[anchor=south] {Login} (login);
+    \draw [arrow] (modo) -- node[anchor=east] {Invitado} (invitado);
+    \draw [arrow] (login) -- (nuevo);
+    \draw [arrow] (login) -- (antiguo);
+    \draw [arrow] (nuevo) -- (juego);
+    \draw [arrow] (antiguo) -- node[anchor=west] {Cargar progreso anterior} (juego);
+    \draw [arrow] (juego.east) --++(4,0) --++ (0,8.25) -- 
+      node[anchor=north,xshift=3.8cm]{Guardar y salir}
+      (index);
+    \draw [arrow] (invitado.west)--++(-2,0)node[anchor=south,xshift=1cm]{Salir}--++(0,8)--
+      (index);
+  \end{tikzpicture}
+  \caption{Estructura del software}
+  \label{fig:esquema}
+\end{figure}
+
+Aunque la parte principal de este trabajo es el juego sobre Technical Debt, la aplicación web cuenta con más partes que complementan y completan su uso.
+Como se puede ver en la figura~\ref{fig:esquema}, la estructura básica de la aplicación cuenta con:
+
+\begin{itemize}
+  \item Dos pantallas estáticas:
+  \begin{itemize}
+    \item Pantalla de Inicio
+    \item Pantalla de inicio de sesión
+  \end{itemize}
+  \item Dos pantallas dinámicas:
+  \begin{itemize}
+    \item Juego sin sesión iniciada
+    \item Juego con sesión iniciada
+  \end{itemize}
+\end{itemize}
+
+Los cambios entre pantallas y las acciones que se pueden realizar en cada una de ellas están gestionadas mediante una arquitectura cliente-servidor.
+
+La pantalla principal es la primera que vería el usuario
 
 \begin{figure}
   \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/arquitectura.png}
-  \caption{Estructura del parser básico}
-  \label{fig:arquitectura}
+  \begin{tikzpicture}
+    \node{Usuarios}[sibling distance=3cm]
+      child{node{Usuario}}
+      child{node{Contraseña}}
+      child{node{Dinero}}
+      child{node{Progreso}[sibling distance=3cm]
+      child{node{Cuadrado 1}[sibling distance=3cm, level distance=2cm]
+      child{node{Coordenada X}}
+      child{node{Coordenada Y}}
+      child{node{Brillo}}}
+      child{node{Cuadrado 2}[level distance=1cm]
+      child{node{\ldots}}}
+      child{node{\ldots}}};
+  \end{tikzpicture}
+  \caption{Estructura de los datos de los usuarios}
+  \label{fig:usuarios}
 \end{figure}
 
 
